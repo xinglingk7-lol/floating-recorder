@@ -1,0 +1,36 @@
+name: Build APK
+
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout do código
+        uses: actions/checkout@v4
+
+      - name: Configurar Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '17'
+
+      - name: Configurar Android SDK
+        uses: android-actions/setup-android@v3
+
+      - name: Instalar Gradle
+        run: |
+          wget -q https://services.gradle.org/distributions/gradle-8.4-bin.zip
+          unzip -q gradle-8.4-bin.zip
+          echo "$PWD/gradle-8.4/bin" >> $GITHUB_PATH
+
+      - name: Compilar APK (debug)
+        run: gradle assembleDebug
+
+      - name: Disponibilizar o APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: FloatingRecorder-apk
+          path: app/build/outputs/apk/debug/*.apk
