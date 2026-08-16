@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <ImageView
+        android:id="@+id/bubbleIcon"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:background="@drawable/bubble_circle"
+        android:padding="14dp"
+        android:src="@android:drawable/presence_video_online"
+        android:contentDescription="Balão de gravação" />
+
+    <LinearLayout
+        android:id="@+id/controlsPanel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@drawable/panel_bg"
+        android:padding="12dp"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/statusLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold"
+            android:layout_marginBottom="8dp"
+            android:text="Parado" />
+
+        <TextView
+            android:id="@+id/btnRecord"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button_bg"
+            android:padding="10dp"
+            android:textColor="#FFFFFF"
+            android:gravity="center"
+            android:layout_marginBottom="6dp"
+            android:text="Gravar" />
+
+        <TextView
+            android:id="@+id/btnStop"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button_bg"
+            android:padding="10dp"
+            android:textColor="#FFFFFF"
+            android:gravity="center"
+            android:layout_marginBottom="6dp"
+            android:text="Parar e salvar" />
+
+        <TextView
+            android:id="@+id/btnClose"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button_bg"
+            android:padding="10dp"
+            android:textColor="#FFFFFF"
+            android:gravity="center"
+            android:text="Fechar balão" />
+
+    </LinearLayout>
+
+</LinearLayout>
